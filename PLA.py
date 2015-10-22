@@ -19,10 +19,13 @@ class Perceptron():
         :return:
         """
         inputs = []
+        lineNum = 0
         with open(filename) as fi:
             for line in fi:
+                lineNum += 1
                 ws = re.split(" |\t|\n", line)
                 inputs.append([float(ws[0]), float(ws[1]), float(ws[2]), float(ws[3]), int(ws[4])])
+        print lineNum
         return inputs
 
     def misClassified(self, data):
